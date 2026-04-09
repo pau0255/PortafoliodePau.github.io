@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sabor Azteca</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        header {
+            background: #006400;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        section {
+            padding: 20px;
+            background: white;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        .menu img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #006400;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        form input, form button {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Restaurante Sabor Azteca</h1>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#reservas">Reservaciones</a>
+        <a href="#acerca">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- Imagen principal -->
+<section class="hero" id="inicio">
+    <h2>Bienvenido a Sabor Azteca</h2>
+    <p>La auténtica experiencia de la comida mexicana</p>
+</section>
+
+<!-- Menú con imágenes -->
+<section id="menu" class="menu">
+    <h2>Menú</h2>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c">
+        <p>Tacos de carnitas - $55</p>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1600891963935-cb38b6a87cde">
+        <p>Chiles rellenos - $95</p>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1625944236875-1b8f7bdb8f0f">
+        <p>Quesadillas de queso - $45</p>
+    </div>
+
+</section>
+
+<!-- Reservas -->
+<section id="reservas">
+    <h2>Reservaciones</h2>
+    <form>
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="date" required>
+        <button type="submit">Agendar</button>
+    </form>
+</section>
+
+<!-- Nosotros con imagen -->
+<section id="acerca" class="about">
+    <h2>Nosotros</h2>
+    <p>Ofrecemos comida casera con recetas tradicionales mexicanas.</p>
+    <img src="https://images.unsplash.com/photo-1555992336-03a23c1c1d94">
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Email: info@saborazteca.com</p>
+    <p>Tel: 555-987-6543</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>©️ 2026 Restaurante Sabor Azteca</p>
+    <p>
+        <a href="#" style="color:white;">Términos y condiciones</a> | 
+        <a href="#" style="color:white;">Política de privacidad</a>
+    </p>
+</footer>
+
+</body>
+</html>
