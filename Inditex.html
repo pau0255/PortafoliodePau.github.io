@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Glow Beauty</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff5f8;
+    }
+
+    header {
+      background-color: #ff4da6;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .precio {
+      color: #ff1493;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    button {
+      background-color: #ff4da6;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    .carrito {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .carrito h2 {
+      margin-top: 0;
+    }
+
+    .item {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Glow Beauty</h1>
+  <p>Skincare & Belleza</p>
+</header>
+
+<div class="contenedor">
+
+  <div class="productos" id="productos"></div>
+
+  <div class="carrito">
+    <h2>🛒 Carrito</h2>
+    <div id="listaCarrito"></div>
+    <p class="total">Total: $<span id="total">0</span> MXN</p>
+  </div>
+
+</div>
+
+<script>
+  const productos = [
+    {
+      nombre: "Sérum Hidratante",
+      precio: 299,
+      imagen: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb"
+    },
+    {
+      nombre: "Crema Facial",
+      precio: 199,
+      imagen: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c"
+    },
+    {
+      nombre: "Protector Solar",
+      precio: 249,
+      imagen: "https://images.unsplash.com/photo-1585238342024-78d387f4a707"
+    }
+  ];
+
+  let carrito = [];
+
+  const contenedor = document.getElementById("productos");
+  const listaCarrito = document.getElementById("listaCarrito");
+  const totalElemento = document.getElementById("total");
+
+  productos.forEach((p, index) => {
+    contenedor.innerHTML += `
+      <div class="producto">
+        <img src="${p.imagen}">
+        <h3>${p.nombre}</h3>
+        <p class="precio">$${p.precio} MXN</p>
+        <button onclick="agregarCarrito(${index})">Agregar</button>
+      </div>
+    `;
+  });
+
+  function agregarCarrito(index) {
+    carrito.push(productos[index]);
+    renderCarrito();
+  }
+
+  function renderCarrito() {
+    listaCarrito.innerHTML = "";
+    let total = 0;
+
+    carrito.forEach(item => {
+      total += item.precio;
+
+      listaCarrito.innerHTML += `
+        <div class="item">
+          ${item.nombre} - $${item.precio}
+        </div>
+      `;
+    });
+
+    totalElemento.innerText = total;
+  }
+</script>
+
+</body>
+</html>
